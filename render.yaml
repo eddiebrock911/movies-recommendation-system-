@@ -1,11 +1,11 @@
 services:
   - type: web
-    name: movie-recommender
+    name: moviesKit
     env: python
     plan: free
     region: oregon
     buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port $PORT
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
     autoDeploy: true
     envVars:
       - key: PORT
